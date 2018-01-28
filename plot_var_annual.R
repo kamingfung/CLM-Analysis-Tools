@@ -1,16 +1,10 @@
-### ============= testing NH3 data from DNLM ============= 
-# loading libraries
-# pkg.list = c("ncdf4", "ggplot2", "reshape2", "abind", "scales", "RColorBrewer", "ggthemes")
-library(ncdf4)            # for reading nc files
+### ===== Loading libraries =====
 library(scales)           # for prettier scalebar in the plots
 library(ggplot2)          # for pretty plots
 library(reshape2)         # for reshaping data.frame for plotting data
-library(abind)            # for n-deminsional matrix merging
 library(RColorBrewer)     # for prettier color in plots
-library(ggthemes)         # for prettier themes in plots
 library(ggpubr)           # for arranging mulitple plots
 library(dplyr)            # for data tidying
-library(viridis)          # for viridis color option
 
 ### ============= Specifying parameters ============= 
 # specify data directory

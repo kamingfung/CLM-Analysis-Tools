@@ -1,12 +1,8 @@
 ### ============ Loading libraries ============
-# pkg.list = c("ncdf4", "ggplot2", "reshape2", "abind", "scales", "RColorBrewer", "ggthemes")
-library(ncdf4)            # for reading nc files
 library(scales)           # for prettier scalebar in the plots
 library(ggplot2)          # for pretty plots
 library(reshape2)         # for reshaping data.frame for plotting data
-library(abind)            # for n-deminsional matrix merging
 library(RColorBrewer)     # for prettier color in plots
-library(ggthemes)         # for prettier themes in plots
 library(ggpubr)           # for arranging mulitple plots
 library(dplyr)            # for data manipulation
 library(tidyr)            # for tidying up data
@@ -100,8 +96,6 @@ for (i in 1:min(2, nplot)) {
   
 }
 
-plot.data$lon[plot.data$lon<0] = plot.data$lon[plot.data$lon<0] + 360
-
 # adding plot information to new columns
 # period for averaging
 plot.data$period = NA
@@ -173,14 +167,6 @@ for (yyyy in plot.year) {
       
       # defining basic plot x, y and z (here we use filled raster)
       g = ggplot(data = sub.data, mapping = aes(x = lon, y = lat))
-      
-      # world = ggplot2::map_data("world2")
-      
-      # colnames(world)[1] = "lon"
-      
-      # g = g + geom_map(data=world, map = world,
-                          # aes(x = long, y = lat, map_id=region), inherit.aes = FALSE,
-                          # color="grey50", fill=NA, size=0.25)
       
       # using non-interpolated raster
       g = g + geom_raster(aes(fill = value), interpolate = F)
