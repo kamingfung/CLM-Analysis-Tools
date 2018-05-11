@@ -10,11 +10,17 @@ You are recommended to download Rstudio and open the `.Rproj` for easier set up 
 ### Plotting variables on a map
 It helps to visualize the spatial variability of a variable with a heat map. `plot_CLM_map.R` helps you to aggregate variables from simulation results annually, seasonally or monthly. You may choose to plot maps from a signal case or plot multiple maps from two cases and together with their difference in each grid point, i.e. 3 maps in total. Maps will be stored in folder `_png`.
 
+![map](./_png/test30.TOTECOSYSC.minus.test32.TOTECOSYSC.2008.annual.png)
+
 ### Plotting variables against time
 Sometimes you may wonder how variables evolve over time. `plot_var_annaul.R` gather variables from cases and use line plots to show temporal variabilities of variables. Again, outputted plots will be stored in folder `_png`.
 
+![timeseries](./_png/test30.test32.TOTECOSYSC.TOTECOSYSN.Annual Mean.png)
+
 ### Plotting comparison between two datasets
 Correlation analysis is useful to investigate whether two sets of variables are linearly related to each other. `plot_CLM_cor.R` aims to help you finish the task. Outputs of this script are maps showing annual total value in each gridcell and put a marker on that gridcell if monthly variable values of the two datasets in that gridcell is correlated with a `p-value` smaller than `0.05`. If the correlation has a `R-sqaure` value greater than `0.5`, the marker will be displayed in a darker color.
+
+![cor](./_png/test30.TOTECOSYSC.vs.test30.TOTECOSYSN.correlation.png)
 
 #
 Hope you would find these tools useful.
